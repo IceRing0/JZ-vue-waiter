@@ -32,6 +32,7 @@ export default {
         logoutHandler(){
             this.logout()
             .then(()=>{
+                this.$toast("退出成功")
                 this.$router.push("/");
             })
         }

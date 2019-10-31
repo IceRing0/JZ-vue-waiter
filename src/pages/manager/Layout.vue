@@ -25,8 +25,8 @@ export default {
             //查询userinfo
             this.getUserInfo(this.token);
         }else{
-            this.$toast("token失效"),
-            this.$router.push({path:'/manager/home'})
+            this.$toast({message:"请登录",duration:700}),
+            this.$router.push({path:'/'})
         }
     },
     computed:{
