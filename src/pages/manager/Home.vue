@@ -1,7 +1,12 @@
 <template>
   <div class="home">
+    <van-sticky>
+      <van-nav-bar
+        title="云边小卖铺"
+      />
+    </van-sticky>
      <van-row>
-      <img style="width:100%;height:300px;" src="../../assets/images/2.jpg" alt="">
+      <img style="width:100%;height:300px;" src="../../assets/images/logo.jpg" alt="">
     </van-row>
      <div class="details">
         <van-row v-if="getOrdersFilter('待接单').length !==0">

@@ -1,89 +1,79 @@
-
 <template>
-    <div class="login">
-        <div class="waiter-login">
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="">
-            </div>
-            <div class="title">员工端</div>
-        </div>
-        <div class="content">
-            <van-cell-group>
-                <van-field
-                    v-model="form.username"
-                    required
-                    clearable
-                    label="用户名"
-                    placeholder="请输入用户名"
-                />
-                <van-field
-                    v-model="form.password"
-                    type="password"
-                    label="密码"
-                    placeholder="请输入密码"
-                    required
-                />
-            </van-cell-group>
-        </div>
-        <van-button id="waiter-submit" type="primary"  size="normal" @click="loginHandler">登陆</van-button>
-        <van-button id="waiter-register" type="info" size="normal">注册</van-button>
+  <div class="login">
+    <div class="title">
+      <h2>云边小卖铺</h2>
+      <h3>员工端</h3>
+    </div>
+    <div class="container">
+      <van-cell-group>
+        <van-field
+          v-model="user.username"
+          required
+          clearable
+          label="用户名"
+          placeholder="请输入用户名"
+        />
+
+        <van-field
+          v-model="user.password"
+          type="password"
+          label="密码"
+          placeholder="请输入密码"
+          required
+        />
+      </van-cell-group>
+    </div>
+    <br>
+    <div class="footer">
+      <van-row>
+      <van-col span="17" class="regist">
+        <van-button size="small" type="info">注册</van-button>
+      </van-col>
+      <van-col span="5">
+        <van-button size="small" type="danger" @click="loginHandler">登录</van-button>
+      </van-col>
+    </van-row>
+    </div>
   </div>
 </template>
-
 <script>
-import {mapState,mapActions} from 'vuex'
-import { Toast } from 'vant';
-Toast.setDefaultOptions({ duration: 1500 });
-
+import { mapActions, mapState } from 'vuex';
 export default {
-    data(){
-        return{
-            form:{
-                type:"waiter"
-            }
-        }
-    },
-    methods:{
-        ...mapActions("user",["waiterLogin"]),
-        loginHandler(){
-            this.waiterLogin(this.form)
-            .then((response)=>{
-                Toast.success("登陆成功")
-                 this.$router.push("/manager/home");
-            },(error)=>{
-                Toast.fail("登陆失败")
-            })
-        }
+  data(){
+    return {
+      user:{
+        type:"waiter"
+      }
     }
-
+  },
+  methods: {
+    ...mapActions("user",["waiterLogin"]),
+    loginHandler(){
+      this.waiterLogin(this.user)
+      .then(()=>{
+        this.$router.push({path:"/manager/home"})
+        this.$toast({ message:"登录成功",duration: 700 });
+      },(error)=>{
+        this.$toast({ message:error,duration: 700 });
+      })
+    }
+  }
 }
 </script>
 <style scoped>
-    .waiter-login{
-        height: 200px;
-        background-color: skyblue;
-        padding: 50px 0;
-    }
-     .waiter-login .logo,
-      .waiter-login .title{
-          text-align: center;
-      }
-       .waiter-login .logo{
-           margin-bottom: 50px;
-       }
-      .waiter-login .logo{
-          height: 50px;
-          color: white;
-          line-height: 50px;
-      }
-      .waiter-login .title{
-          height: 100px;
-          line-height: 100px;
-          font-size: 30px;
-          color:white;
-      }
-    #waiter-submit,#waiter-register{
-        margin: 10px 18px;
-        width: 90%;
-    }
+  .title {
+    color:#ee0a24;
+    text-align: center;
+    margin-top: 150px;
+  }
+  .container {
+    margin: 0 30px;
+  }
+  .footer {
+    margin: 0 30px;
+  }
+  .regist {
+    text-align: right;
+    margin-right: 20px;
+  }
 </style>

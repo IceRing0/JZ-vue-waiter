@@ -18,12 +18,12 @@
                         <van-row>                     
                         <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                             <van-icon name="todo-list-o" /></van-col>
-                            <van-col :span="20">服务内容： {{}}</van-col>
+                            <van-col :span="20">零食： {{}}</van-col>
                         </van-row>
                         <van-row>
                             <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                 <van-icon name="location-o" /></van-col>
-                            <van-col :span="20">地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
+                            <van-col :span="20">配送地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
                         </van-row>
                     
                     </van-panel>
@@ -49,12 +49,12 @@
                         <van-row>                     
                             <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                 <van-icon name="todo-list-o" /></van-col>
-                                <van-col :span="20">服务内容： {{}}</van-col>
+                                <van-col :span="20">零食： {{}}</van-col>
                         </van-row>
                         <van-row>
                                 <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                     <van-icon name="location-o" /></van-col>
-                                <van-col :span="20">地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
+                                <van-col :span="20">配送地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
                         </van-row>
                         <div slot="footer" style="text-align:right">
                             <div v-if="o.status === '待接单'">
@@ -84,16 +84,16 @@
                         <van-row>                     
                             <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                 <van-icon name="todo-list-o" /></van-col>
-                                <van-col :span="20">服务内容： {{}}</van-col>
+                                <van-col :span="20">零食： {{}}</van-col>
                         </van-row>
                         <van-row>
                                 <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                     <van-icon name="location-o" /></van-col>
-                                <van-col :span="20">地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
+                                <van-col :span="20">配送地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
                         </van-row>
                         <div slot="footer" style="text-align:right">
                             <div v-if="o.status === '待服务'">
-                                <van-button size="small" type="warning" plain @click="completeHandler(o.id)">完成</van-button>&nbsp;
+                                <van-button size="small" type="warning" plain @click="completeHandler(o.id)">派送完成</van-button>&nbsp;
                                
                             </div>
                         </div>
@@ -119,12 +119,12 @@
                         <van-row>                     
                             <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                 <van-icon name="todo-list-o" /></van-col>
-                                <van-col :span="20">服务内容： {{}}</van-col>
+                                <van-col :span="20">零食： {{}}</van-col>
                         </van-row>
                         <van-row>
                                 <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                     <van-icon name="location-o" /></van-col>
-                                <van-col :span="20">地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
+                                <van-col :span="20">配送地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
                         </van-row>
                         
                     </van-panel>
@@ -151,12 +151,12 @@
                         <van-row>                     
                             <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                 <van-icon name="todo-list-o" /></van-col>
-                                <van-col :span="20">服务内容： {{}}</van-col>
+                                <van-col :span="20">零食： {{}}</van-col>
                         </van-row>
                         <van-row>
                                 <van-col :span="4" style="text-align:center; margin-bottom:5px;">
                                     <van-icon name="location-o" /></van-col>
-                                <van-col :span="20">地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
+                                <van-col :span="20">配送地址： {{o.address.province+" "+o.address.city+" "+o.address.area}}</van-col>
                         </van-row>
                         
                     </van-panel>
